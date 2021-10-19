@@ -1,0 +1,36 @@
+* CoreFn
+CoreFn is a minimal, extensible, malleable, JSON-based representation for functional languages based on
+lambda calculus. It aims to provide the following use-cases:
+
++ An optimizing intermediate representation that can generate code for various high-level targets
+  like Node.js or Scheme.
++ An easy-to-use representation for implementing language tools like documentation generators or
+  rich REPL environments.
+
+* Questions
+I can't name this section "Frequently Asked Questions" yet because there's no such questions, but
+here's some that might come up:
+
+** CoreFn as in PureScript's CoreFn?
+This project is inspired primarily by [[https://github.com/purescript/purescript][PureScript]]'s internal ~CoreFn~ representation which allows
+different backends to be implemented fairly easily. However, this project only aims to provide a
+frontend for the representation and its targets, not a full-blown compiler suite.
+
+** High-Level Targets?
+Given that CoreFn is essentially lambda-calculus-in-JSON, the easiest languages to target would be
+those that are heavily expression-based like modern JavaScript, various LISP flavors, or Erlang.
+
+** Module System?
+CoreFn aims to provide a target-agnostic module system that avoids problems such as dependency
+cycles between modules. CoreFn files are considered as distinct modules, and they can refer to other
+CoreFn files to signify imports.
+
+** Why PureScript?
+I decided to implement CoreFn in PureScript particularly because of its simplicity and the fact that
+it compiles to JavaScript, which is practically portable in all platforms. However, I also encourage
+implementing CoreFn in other languages for reasons such as performance or just language support.
+
+** Stability?
+There's no guarantee that the canonical implementation (i.e. this project) will be stable in the
+near future, as this is a hobby project. However, once it grows to a reasonable size, I'll start
+diverting more focus to the project to hopefully pick up adoption.
